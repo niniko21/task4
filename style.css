@@ -1,0 +1,252 @@
+
+.header{
+display: flex;
+flex-wrap: wrap; 
+justify-content: space-between;
+height: auto;
+max-width: 100%;
+align-items: center;
+padding:0 100px;
+
+}
+.headerlogo{
+display: flex;
+align-items: center;
+gap: 5px;
+}
+.header h3 
+{color: #263238;
+  font-family: 'Inter', sans-serif;
+    font-size: 16px;
+  line-height: 20px;
+}     
+
+nav {
+display: flex;
+gap: 20px;
+align-items: center;
+
+}
+nav ul{
+  color: #4D4D4D;
+  list-style: none;
+  display: flex;
+gap:17px;
+font-family:'Inter', sans-serif;
+font-weight:600;
+font-style: normal;
+font-size: 16px;
+line-height: 17px;
+letter-spacing: 0%;
+}
+
+nav ul li a {
+  color: #4D4D4D;             
+  text-decoration: none;     
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #4CAF4F;          
+}
+
+nav .register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #4CAF4F;
+  border: none;
+  border-radius: 3px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  cursor: pointer;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+nav .register-btn:hover {
+    background-color: #45a049;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+nav .register-btn .arrow-icon {
+  width: 10px;
+  height: 14px;
+  stroke: white;
+}
+.maincard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; 
+max-width: 100%;
+height: 417px;
+padding:0 100px;
+
+background: #F5F7FA;
+
+}
+.cardelements1 {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 457px; 
+ height: auto; 
+  gap: 12px;
+}
+
+h1 {
+  width: 458px;
+  height: 106px;
+ text-align: left;
+  
+}
+.blackcolor {
+  display: block;
+  color: #4D4D4D;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 45px;
+  line-height: 53px;
+  width: 100%;
+  white-space: nowrap; 
+}
+.greencolor {
+  display: block;
+  color: #4CAF4F;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 45px;
+  line-height: 53px;
+  width: 100%;
+}
+
+.cardelements1 p {
+  color: #717171;
+  max-width: 457px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11.14px;
+  line-height: 16px;
+  margin: 0 0 20px 0;
+}
+.cardelements1 button{
+  width: 90px;
+  height: 36px;
+ padding: 10px 22px;
+  border: none;
+  border-radius: 3px;
+  background-color: #4CAF4F;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  cursor: pointer;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+ .cardelements1 button:hover{
+    background-color: #45a049;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+ }
+
+ .cardelements2 {
+  display: flex;
+    flex-wrap: wrap; 
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.cardelements2 img {
+  flex: 1 1 200px;
+   max-width: 272px;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+  .header,
+  .maincard {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header,
+  .maincard {
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .register-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cardelements1 h1,
+  .blackcolor,
+  .greencolor {
+    font-size: 32px;
+    line-height: 38px;
+    white-space: normal;
+  }
+
+  .cardelements1 p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .cardelements2 img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header,
+  .maincard {
+    padding: 0 12px;
+  }
+
+  .cardelements1 h1,
+  .blackcolor,
+  .greencolor {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .cardelements1 button {
+    width: 100%;
+  }
+
+  .cardelements2 img {
+    max-width: 100%;
+  }
+}
