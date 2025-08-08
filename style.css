@@ -82,20 +82,20 @@ nav .register-btn .arrow-icon {
   height: 14px;
   stroke: white;
 }
+
 .maincard {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; 
   justify-content: space-between;
-  align-items: center; 
-max-width: 100%;
-height: 417px;
-padding:0 100px;
-
-background: #F5F7FA;
-
+  align-items: center;
+  max-width: 100%;
+  padding: 0 100px;
+  min-height: 417px;
+  background: #F5F7FA;
+  gap: 20px; 
 }
 .cardelements1 {
-  flex: 1 1 300px;
+  flex: 0 0 457px; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,12 +104,16 @@ background: #F5F7FA;
   gap: 12px;
 }
 
+
 h1 {
-  width: 458px;
-  height: 106px;
- text-align: left;
-  
+  width: 100%;
+  height: auto;
+  text-align: left;
+  font-size: 45px;
+  line-height: 53px;
+  white-space: normal;
 }
+
 .blackcolor {
   display: block;
   color: #4D4D4D;
@@ -119,8 +123,9 @@ h1 {
   font-size: 45px;
   line-height: 53px;
   width: 100%;
-  white-space: nowrap; 
+  white-space: normal; /* CHANGED from nowrap to normal */
 }
+
 .greencolor {
   display: block;
   color: #4CAF4F;
@@ -130,16 +135,16 @@ h1 {
   font-size: 45px;
   line-height: 53px;
   width: 100%;
+  white-space: normal; /* add this too */
 }
 
 .cardelements1 p {
   color: #717171;
-  max-width: 457px;
   width: 100%;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 11.14px;
+  font-size: 12px;
   line-height: 16px;
   margin: 0 0 20px 0;
 }
@@ -165,50 +170,100 @@ h1 {
   transform: translateY(-2px);
  }
 
- .cardelements2 {
+.cardelements2 {
+  flex: 0 0 272px; 
   display: flex;
-    flex-wrap: wrap; 
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  padding: 0 10px;
 }
-
 
 .cardelements2 img {
-  flex: 1 1 200px;
-   max-width: 272px;
-    height: auto;
+  width: 100%;
+  max-width: 272px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
+.ourclients {
+  display: flex;
+  flex-wrap: wrap; /* რომ იკავოს სივრცე და არ გაწელოს */
+  justify-content: center; /* ცენტრში განლაგება */
+  align-items: center;
+  max-width: 1200px; /* მაქსიმალური სიგანე */
+  margin: 0 auto; /* ცენტრში გასატანა */
+  padding: 40px 20px; /* სასიამოვნო შიდა სივრცე */
+  min-height: auto; /* საჭიროებისამებრ */
+  background: #F5F7FA;
+  gap: 20px;
+  box-sizing: border-box; /* padding არ დაარღვევს ზომას */
+}
+
+.container h2 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+.container p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin: 0 0 40px 0;
+  width: 100%;
+}
+.
 @media (max-width: 1024px) {
-  .header,
+  .header {
+    padding: 0 40px;
+  }
   .maincard {
     padding: 0 40px;
   }
 }
 
+
 @media (max-width: 768px) {
-  .header,
-  .maincard {
+  .header {
     padding: 0 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .register-btn {
-    width: 100%;
     justify-content: center;
+    gap: 20px;
+  }
+  
+  nav ul {
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  nav ul li a {
+    font-size: 10px;
+  }
+
+  .maincard {
+    flex-wrap: wrap; 
+    flex-direction: column;
+    padding: 0 20px;
+    min-height: auto;
+    gap: 30px;
+  }
+
+  .cardelements1,
+  .cardelements2 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  h1 {
+    width: 100%;
+    height: auto;
+    font-size: 32px;
+    line-height: 38px;
+    white-space: normal;
   }
 
   .cardelements1 h1,
@@ -216,7 +271,7 @@ h1 {
   .greencolor {
     font-size: 32px;
     line-height: 38px;
-    white-space: normal;
+
   }
 
   .cardelements1 p {
@@ -224,29 +279,216 @@ h1 {
     line-height: 20px;
   }
 
+  .cardelements1 button {
+    width: 100%;
+    max-width: 150px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .cardelements2 img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    padding: 10px 10px;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 10px;
+  }
+
+  nav .register-btn {
+    padding: 8px 15px;
+    font-size: 10px;
+  }
+
+  .maincard {
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .blackcolor,
+  .greencolor {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+  .cardelements1 p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .cardelements1 button {
+    max-width: 100%;
+  }
+
   .cardelements2 img {
     max-width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .header,
-  .maincard {
-    padding: 0 12px;
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 40px;
   }
 
+  .maincard {
+    padding: 0 40px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul {
+    font-size: 14px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li a {
+    font-size: 10px;
+  }
+
+  .maincard {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    min-height: auto;
+    gap: 30px;
+  }
+
+  .cardelements1,
+  .cardelements2 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  h1,
   .cardelements1 h1,
   .blackcolor,
   .greencolor {
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 32px;
+    line-height: 38px;
+    white-space: normal;
+    width: 100%;
+    height: auto;
+    text-align: left;
+  }
+
+  .cardelements1 p {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
   }
 
   .cardelements1 button {
+    width: 100%;
+    max-width: 150px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .cardelements2 img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    padding: 10px 10px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 10px;
+  }
+
+  nav .register-btn {
+    padding: 8px 15px;
+    font-size: 10px;
+  }
+
+  .maincard {
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  h1,
+  .blackcolor,
+  .greencolor {
+    font-size: 24px;
+    line-height: 28px;
+    white-space: normal;
+    width: 100%;
+    height: auto;
+    text-align: left;
+  }
+
+  .cardelements1 p {
+    font-size: 12px;
+    line-height: 16px;
+    width: 100%;
+  }
+
+  .cardelements1 button {
+    max-width: 100%;
     width: 100%;
   }
 
   .cardelements2 img {
     max-width: 100%;
+    height: auto;
   }
 }
